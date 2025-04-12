@@ -44,7 +44,7 @@ const AboutSection = () => {
         whileInView="show"
         viewport={{ once: true, amount: 0.3 }}
       >
-        <Card content={content} imageSrc={aboutImg} />
+        <Card content={content} imageSrc={aboutImg} button={true} />
       </motion.div>
     </section>
   );
