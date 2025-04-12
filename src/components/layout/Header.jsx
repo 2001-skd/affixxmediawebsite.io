@@ -1,14 +1,12 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import MenuIcon from "@mui/icons-material/Menu";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import XIcon from "@mui/icons-material/X";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import CloseIcon from "@mui/icons-material/Close";
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
 import MobileMenu from "./MobileMenu";
 
 const Header = () => {
