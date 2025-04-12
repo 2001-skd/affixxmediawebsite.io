@@ -1,3 +1,21 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer utilities {
+  .violet_bg {
+    background-image: url("../violet_bg.webp");
+    background-repeat: no-repeat;
+    background-position: 10% 80%;
+    line-height: 5rem;
+    background-size: cover;
+  }
+
+  .green_bg {
+    background-image: url("../green_bg.webp");
+    background-repeat: no-repeat;
+    background-position: 10% 80%;
+    line-height: 5rem;
+    background-size: cover;
+  }
+}

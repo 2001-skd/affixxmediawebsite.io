@@ -119,12 +119,9 @@ const Header = () => {
           {/* cta button starts */}
           <div className="hidden md:block">
             <CTAButton
+              link="/contact"
               label="Book a Call"
-              color="white"
-              bgColor="black"
               icon={<AddCallIcon />}
-              iconColor="black"
-              iconBgColor="#68ffff"
             />
           </div>
           {/* cta button ends */}

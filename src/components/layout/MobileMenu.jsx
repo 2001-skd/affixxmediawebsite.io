@@ -42,7 +42,7 @@ const MobileMenu = ({ navItems, socialMediaLinks, isMenuOpen }) => {
                     to={value.path}
                     className={({ isActive }) =>
                       isActive
-                        ? "underline underline-offset-4"
+                        ? "underline underline-offset-4 font-bold"
                         : "hover:underline"
                     }
                   >
@@ -65,14 +65,12 @@ const MobileMenu = ({ navItems, socialMediaLinks, isMenuOpen }) => {
 
             {/* social media icon starts */}
             {/* cta button starts */}
-            <div className="md:hidden block">
+            <div className="md:hidden flex items-center justify-center">
               <CTAButton
                 label="Book a Call"
                 color="black"
                 bgColor="white"
                 icon={<AddCallIcon />}
-                iconColor="#68ffff"
-                iconBgColor="black"
               />
             </div>
             {/* cta button ends */}
