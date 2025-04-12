@@ -18,9 +18,9 @@ const ServiceSection = () => {
   return (
     <section
       ref={sectionRef}
-      className="md:relative md:h-[300vh] bg-white px-4 sm:px-6 md:px-10 lg:px-20"
+      className="relative h-[300vh] bg-white px-4 sm:px-6 md:px-10 lg:px-20"
     >
-      <div className="md:sticky md:top-0 static h-screen flex flex-col items-center justify-center">
+      <div className="sticky top-0 h-screen flex flex-col items-center justify-center">
         <SectionHeading heading="What We Provide?" subHeading="Our Services" />
 
         <div className="relative w-full h-[500px] mt-10">
@@ -54,11 +54,11 @@ const ServiceSection = () => {
             // Apply spring physics for smoother animations
             const springY = useSpring(y, { stiffness: 100, damping: 20 });
             const springScale = useSpring(scale, {
-              stiffness: 100,
+              stiffness: 80,
               damping: 20,
             });
             const springOpacity = useSpring(opacity, {
-              stiffness: 100,
+              stiffness: 80,
               damping: 20,
             });
 
