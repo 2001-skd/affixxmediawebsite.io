@@ -6,8 +6,8 @@ const CTAButton = ({
   color = "white",
   bgColor = "black",
   icon,
-  iconColor = "black",
-  iconBgColor = "#68ffff",
+  iconColor = "white",
+  iconBgColor = "#3938f3",
 }) => {
   const buttonStyle = {
     backgroundColor: bgColor,

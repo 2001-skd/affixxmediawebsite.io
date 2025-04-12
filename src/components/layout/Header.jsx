@@ -63,7 +63,7 @@ const Header = () => {
   // toggle menu ends
 
   return (
-    <header className="bg-white border-b-[0.8px] border-gray-600 border-dashed fixed flex items-center justify-between w-screen">
+    <header className="bg-white border-b-[0.8px] border-gray-600 border-dashed fixed flex items-center justify-between w-screen z-10">
       <div className="container mx-auto py-4 px-4 md:flex md:items-center md:justify-between">
         <div className="flex items-center justify-between w-[100%]">
           <NavLink to="/" className="text-black font-bold text-2xl">
