@@ -8,6 +8,8 @@ import { NavLink } from "react-router-dom";
 import CloseIcon from "@mui/icons-material/Close";
 import { useState } from "react";
 import MobileMenu from "./MobileMenu";
+import CTAButton from "../ui/CTAButton";
+import AddCallIcon from "@mui/icons-material/AddCall";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -61,24 +63,28 @@ const Header = () => {
   // toggle menu ends
 
   return (
-    <header className="glass-bg relative">
+    <header className="bg-white border-b-[0.8px] border-gray-600 border-dashed fixed flex items-center justify-between w-screen">
       <div className="container mx-auto py-4 px-4 md:flex md:items-center md:justify-between">
         <div className="flex items-center justify-between w-[100%]">
-          <NavLink to="/" className="text-white font-bold text-2xl">
+          <NavLink to="/" className="text-black font-bold text-2xl">
             affixx Media
           </NavLink>
           {/* navbar items starts */}
           <nav className="hidden md:block">
             <ul className="flex items-center gap-5 text-white md:flex-row flex-col">
               {navItems.map((value) => (
-                <li className={` ${value.submenu ? "relative group" : ""}`}>
+                <li
+                  className={`text-black ${
+                    value.submenu ? "relative group" : ""
+                  }`}
+                >
                   <NavLink
                     to={value.path}
                     className={({ isActive, isPending }) =>
                       isPending
                         ? "pending"
                         : isActive
-                        ? "underline underline-offset-4 transition-all duration-100 ease-linear"
+                        ? "underline underline-offset-4 transition-all duration-100 ease-linear font-bold"
                         : ""
                     }
                   >
@@ -110,25 +116,28 @@ const Header = () => {
           </nav>
           {/* navbar items ends */}
 
-          {/* social media icon starts */}
-          <div className="social_media_icons hidden md:block">
-            <ul className="flex items-center justify-center gap-5">
-              {socialMediaLinks.map((value) => (
-                <li key={value.name}>
-                  <a className="text-white hover:translate-y-5 group" href="#">
-                    <value.icon className="group-hover:-translate-y-1 transition-all duration-100 ease-linear" />
-                  </a>
-                </li>
-              ))}
-            </ul>
+          {/* cta button starts */}
+          <div className="hidden md:block">
+            <CTAButton
+              label="Book a Call"
+              color="white"
+              bgColor="black"
+              icon={<AddCallIcon />}
+              iconColor="black"
+              iconBgColor="#68ffff"
+            />
           </div>
-          {/* social media icon ends */}
+          {/* cta button ends */}
           {/* menu toggle starts */}
           <button className="md:hidden block" onClick={handleToggleMenu}>
             {isMenuOpen ? (
-              <CloseIcon className={`text-white`} />
+              <i className="bg-[#5cffff] text-black p-1 rounded-full flex items-center justify-center">
+                <CloseIcon className={`text-black`} />
+              </i>
             ) : (
-              <MenuIcon className={`text-white`} />
+              <i className="bg-[#5cffff] text-black p-1 rounded-full flex items-center justify-center">
+                <MenuIcon className={`text-black`} />
+              </i>
             )}
           </button>
           {/* menu toggle ends */}
