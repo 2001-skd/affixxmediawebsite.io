@@ -48,17 +48,6 @@ const MobileMenu = ({ navItems, socialMediaLinks, isMenuOpen }) => {
                   >
                     {value.page}
                   </NavLink>
-                  {value.submenu && (
-                    <KeyboardArrowDownIcon
-                      style={{
-                        transform:
-                          activeDropdown === index
-                            ? "rotate(180deg)"
-                            : "rotate(0)",
-                        transition: "transform 0.3s ease",
-                      }}
-                    />
-                  )}
                 </div>
               </li>
             ))}

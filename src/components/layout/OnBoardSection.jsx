@@ -57,6 +57,7 @@ const OnBoardSection = () => {
             index={index}
             isLastOdd={isOdd}
             imgSrc={step.image}
+            onBoard={true}
           />
         ))}
       </motion.div>

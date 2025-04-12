@@ -21,6 +21,7 @@ const AboutSection = () => {
     transition: { duration: 2, ease: "easeOut" },
   });
   const x = useTransform(scrollYProgress, [0, 1], ["0%", "-80%"]);
+
   const content = (
     <>
       We’re a results-driven digital marketing team obsessed with growth. From{" "}
@@ -36,6 +37,7 @@ const AboutSection = () => {
 
   return (
     <section
+      id="about"
       ref={targetRef}
       className="px-4 sm:px-6 md:px-10 lg:px-20 flex-col gap-6 w-full mb-10 relative h-[180vh]"
     >
