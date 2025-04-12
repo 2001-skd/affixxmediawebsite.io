@@ -27,7 +27,7 @@ const Card = ({
       {/* Content Part */}
       <div className="w-full md:w-1/2">
         <h1 className="font-bold text-3xl md:text-5xl text-white mb-3">
-          web Developement
+          {title && title}
         </h1>
         <p className="font-medium text-white mb-5 text-base sm:text-lg md:text-xl leading-relaxed">
           {content}

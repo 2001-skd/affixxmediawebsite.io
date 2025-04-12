@@ -1,19 +1,26 @@
-import React from "react";
+import React, { useRef } from "react";
 import SectionHeading from "../ui/SectionHeading";
 import aboutImg from "../../assets/gamright.webp";
 import Card from "../ui/Card";
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 
 const fadeUpVariant = {
   hidden: { opacity: 0, y: 40 },
   show: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.8, ease: "easeOut" },
+    transition: { duration: 2, ease: "easeOut" },
   },
 };
 
 const AboutSection = () => {
+  const targetRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: targetRef,
+    offset: ["start start", "end end"],
+    transition: { duration: 2, ease: "easeOut" },
+  });
+  const x = useTransform(scrollYProgress, [0, 1], ["0%", "-80%"]);
   const content = (
     <>
       We’re a results-driven digital marketing team obsessed with growth. From{" "}
@@ -28,7 +35,10 @@ const AboutSection = () => {
   );
 
   return (
-    <section className="px-4 sm:px-6 md:px-10 lg:px-20 flex-col gap-6 w-full mb-10">
+    <section
+      ref={targetRef}
+      className="px-4 sm:px-6 md:px-10 lg:px-20 flex-col gap-6 w-full mb-10 relative h-[180vh]"
+    >
       <motion.div
         variants={fadeUpVariant}
         initial="hidden"
@@ -43,6 +53,8 @@ const AboutSection = () => {
         initial="hidden"
         whileInView="show"
         viewport={{ once: true, amount: 0.3 }}
+        style={{ x }}
+        transition={{ type: "spring", stiffness: 100, damping: 100 }}
       >
         <Card content={content} imageSrc={aboutImg} button={true} />
       </motion.div>
