@@ -20,7 +20,7 @@ const ServiceSection = () => {
       ref={sectionRef}
       className="relative h-[300vh] bg-white px-4 sm:px-6 md:px-10 lg:px-20"
     >
-      <div className="sticky top-0 h-screen flex flex-col items-center justify-center">
+      <div className="md:sticky md:top-0 static h-screen flex flex-col items-center justify-center">
         <SectionHeading heading="What We Provide?" subHeading="Our Services" />
 
         <div className="relative w-full h-[500px] mt-10">
