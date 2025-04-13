@@ -5,7 +5,7 @@ import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import CTAButton from "../ui/CTAButton";
 import AddCallIcon from "@mui/icons-material/AddCall";
 
-const MobileMenu = ({ navItems, socialMediaLinks, isMenuOpen }) => {
+const MobileMenu = ({ navItems, isMenuOpen }) => {
   const [activeDropdown, setActiveDropdown] = useState(null);
   // toggle dropdown starts
   function handleDropDown(key) {
@@ -38,16 +38,7 @@ const MobileMenu = ({ navItems, socialMediaLinks, isMenuOpen }) => {
                   className="flex items-center justify-between text-xl"
                   onClick={() => value.submenu && handleDropDown(index)}
                 >
-                  <NavLink
-                    to={value.path}
-                    className={({ isActive }) =>
-                      isActive
-                        ? "underline underline-offset-4 font-bold"
-                        : "hover:underline"
-                    }
-                  >
-                    {value.page}
-                  </NavLink>
+                  <NavLink to={value.path}>{value.page}</NavLink>
                 </div>
               </li>
             ))}

@@ -59,9 +59,9 @@ const Header = () => {
           <button className="md:hidden block" onClick={handleToggleMenu}>
             <i className="bg-[#3938f3] text-white p-1 rounded-full flex items-center justify-center">
               {isMenuOpen ? (
-                <CloseIcon className="text-black" />
+                <CloseIcon className="text-white" />
               ) : (
-                <MenuIcon className="text-black" />
+                <MenuIcon className="text-white" />
               )}
             </i>
           </button>
