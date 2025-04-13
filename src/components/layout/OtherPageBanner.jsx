@@ -18,7 +18,7 @@ const OtherPageBanner = ({ title }) => {
     },
   };
   return (
-    <section className="flex items-center justify-center h-[300px] px-4 sm:px-6 md:px-10 lg:px-20 flex-col gap-6 w-full">
+    <section className="flex items-center justify-center h-[300px] bg-black px-4 sm:px-6 md:px-10 lg:px-20 flex-col gap-6 w-full">
       <motion.div
         variants={containerVariants}
         initial="hidden"
@@ -30,7 +30,7 @@ const OtherPageBanner = ({ title }) => {
           variants={blurTitleVariant}
           className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-snug sm:leading-tight"
         >
-          <span className="violet_bg">{title}</span>
+          <span className="violet_bg text-white">{title}</span>
         </motion.h1>
       </motion.div>
     </section>
