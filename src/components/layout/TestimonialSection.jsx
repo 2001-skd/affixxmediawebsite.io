@@ -41,7 +41,7 @@ const TestimonialSection = () => {
         <div className="absolute bottom-0 left-0 w-full h-20 z-20 pointer-events-none bg-gradient-to-t from-white/95 to-transparent" />
 
         <motion.div
-          className="grid grid-cols-3 gap-4"
+          className="grid md:grid-cols-3 grid-cols-1 gap-4"
           variants={marqueeVariants}
           animate="animate"
         >
