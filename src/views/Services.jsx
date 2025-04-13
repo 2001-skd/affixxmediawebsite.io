@@ -10,11 +10,11 @@ const ServicesPage = React.lazy(() =>
 const Services = () => {
   return (
     <>
-      <Suspense fallback={<p>Loading...</p>}>
+      <Suspense>
         <OtherPageBanner title="Our Services" />
       </Suspense>
 
-      <Suspense fallback={<p>Loading...</p>}>
+      <Suspense>
         <ServicesPage />
       </Suspense>
     </>

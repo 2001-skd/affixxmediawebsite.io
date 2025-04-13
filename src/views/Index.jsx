@@ -18,23 +18,23 @@ const TestimonialSection = React.lazy(() =>
 const Index = () => {
   return (
     <>
-      <Suspense fallback={<p>Loading..</p>}>
+      <Suspense>
         <HeroBanner />
       </Suspense>
 
-      <Suspense fallback={<p>Loading..</p>}>
+      <Suspense>
         <AboutSection />
       </Suspense>
 
-      <Suspense fallback={<p>Loading..</p>}>
+      <Suspense>
         <ServiceSection />
       </Suspense>
 
-      <Suspense fallback={<p>Loading..</p>}>
+      <Suspense>
         <OnBoardSection />
       </Suspense>
 
-      <Suspense fallback={<p>Loading..</p>}>
+      <Suspense>
         <TestimonialSection />
       </Suspense>
     </>
