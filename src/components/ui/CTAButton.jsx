@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
 
 const CTAButton = ({
-  link,
+  link = "https://whatsform.com/JEIu8T",
   label,
   color = "white",
   bgColor = "black",
@@ -18,7 +18,7 @@ const CTAButton = ({
     color: iconColor,
   };
   return (
-    <NavLink to={link}>
+    <NavLink to={link} target="_blank">
       <button
         style={buttonStyle}
         className={`p-2 px-5 rounded-full font-bold flex items-center justify-between gap-2`}

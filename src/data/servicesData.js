@@ -2,6 +2,7 @@ import { details } from "framer-motion/client";
 import image from "../assets/gamright.webp";
 export const serviceData = [
   {
+    id: "social_media_marketing",
     title: "Social Media Marketing",
     img: image,
     details: [
@@ -17,6 +18,7 @@ export const serviceData = [
   },
 
   {
+    id: "performance_marketing",
     title: "Performance Marketing",
     img: image,
     details: [
@@ -31,6 +33,7 @@ export const serviceData = [
     ],
   },
   {
+    id: "influencer_marketing",
     title: "Influencer Marketing",
     img: image,
     details: [
@@ -45,6 +48,7 @@ export const serviceData = [
     ],
   },
   {
+    id: "seo",
     title: "Search Engine Optimization (SEO)",
     img: image,
     details: [
@@ -59,6 +63,7 @@ export const serviceData = [
     ],
   },
   {
+    id: "guerilla_marketing",
     title: "Guerrilla Marketing",
     img: image,
     details: [
@@ -74,6 +79,7 @@ export const serviceData = [
   },
 
   {
+    id: "web_developement",
     title: "Website Development",
     img: image,
     details: [
@@ -88,6 +94,7 @@ export const serviceData = [
     ],
   },
   {
+    id: "mobile_app_developement",
     title: "Mobile App Development",
     img: image,
     details: [
@@ -102,6 +109,7 @@ export const serviceData = [
     ],
   },
   {
+    id: "film_prommotions",
     title: "Film Promotions",
     img: image,
     details: [

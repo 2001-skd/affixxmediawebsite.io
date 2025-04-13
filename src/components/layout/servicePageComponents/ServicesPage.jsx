@@ -8,7 +8,11 @@ const ServicesPage = () => {
     <section className="px-4 sm:px-6 md:px-10 lg:px-20 w-full mb-20 mt-5">
       {serviceData.map((service, index) => (
         <>
-          <SectionHeading heading={service.title} subHeading="Our Services" />
+          <SectionHeading
+            heading={service.title}
+            subHeading="Our Services"
+            id={service.id}
+          />
           <ServiceCardGroup
             key={index}
             title={service.title}

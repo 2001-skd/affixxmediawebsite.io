@@ -7,71 +7,14 @@ import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
 import EmailIcon from "@mui/icons-material/Email";
-import Marquee from "../ui/Marquee";
+import { navItems } from "../../data/navItems";
 
-const QUICKLINKS = [
-  {
-    title: "Home",
-    link: "/",
-  },
-  {
-    title: "About Us",
-    link: "/about",
-  },
-  {
-    title: "Services",
-    link: "/services",
-  },
-  {
-    title: "Contact Us",
-    link: "/contact",
-  },
-];
-
-const OTHERLINKS = [
-  {
-    title: "Social Media Marketing",
-    link: "/services",
-  },
-  {
-    title: "Performance Marketing",
-    link: "/services",
-  },
-  {
-    title: "Influencer Marketing",
-    link: "/services",
-  },
-  {
-    title: "Search Engine Optimization (SEO)",
-    link: "/services",
-  },
-  {
-    title: "Guerrilla Marketing",
-    link: "/services",
-  },
-  {
-    title: "Website Development",
-    link: "/services",
-  },
-  {
-    title: "Mobile App Development",
-    link: "/services",
-  },
-  {
-    title: "Film Promotions",
-    link: "/services",
-  },
-];
-
-const OFFICE_HOURS = [
-  {
-    day: "Monday - Saturday",
-    timing: "09:00 AM - 06:00 PM",
-  },
-  {
-    day: "Sunday",
-    timing: "Holiday",
-  },
+const SOCIAL_LINKS = [
+  { icon: <FacebookIcon />, url: "https://facebook.com/yourpage" },
+  { icon: <InstagramIcon />, url: "https://instagram.com/yourpage" },
+  { icon: <LinkedInIcon />, url: "https://linkedin.com/company/yourpage" },
+  { icon: <XIcon />, url: "https://x.com/yourpage" },
+  { icon: <WhatsAppIcon />, url: "https://wa.me/1234567890" },
 ];
 
 const DETAILS = [
@@ -92,13 +35,52 @@ const DETAILS = [
   },
 ];
 
+const OFFICE_HOURS = [
+  {
+    day: "Monday - Saturday",
+    timing: "09:00 AM - 06:00 PM",
+  },
+  {
+    day: "Sunday",
+    timing: "Holiday",
+  },
+];
+
 const currentYear = new Date().getFullYear();
 
+// Helper component for navigation links
+const NavItem = ({ path, page, isSection }) => {
+  if (isSection) {
+    return (
+      <a
+        href={`${path}`}
+        className="py-1.5 font-normal hover:text-gray-300 hover:underline underline-offset-4"
+        target={path.startsWith("http") ? "_blank" : "_self"}
+        rel={path.startsWith("http") ? "noopener noreferrer" : ""}
+      >
+        {page}
+      </a>
+    );
+  }
+
+  return (
+    <NavLink
+      to={path}
+      className={({ isActive }) =>
+        isActive
+          ? "py-1.5 font-normal hover:text-gray-300 transition-all duration-100 ease-linear"
+          : "py-1.5 font-normal hover:text-gray-300 hover:underline"
+      }
+    >
+      {page}
+    </NavLink>
+  );
+};
+
 export default function Footer() {
-  let content = "Let’s grow your brand like never before With Affixx Media";
+  let content = "Let's grow your brand like never before With Affixx Media";
   return (
     <>
-      {/* <Marquee bg="violet_bg" content={content.repeat(5)} /> */}
       <footer className="w-full bg-black text-white">
         <div className="text-3xl font-bold text-center px-5 py-2 violet_bg">
           {content}
@@ -108,8 +90,8 @@ export default function Footer() {
             <div className="flex flex-col items-center md:items-start gap-5">
               <h2 className="text-2xl font-bold">Affixx Media</h2>
               <div>
-                {DETAILS.map((value) => (
-                  <div className="flex items-center gap-3 mb-4">
+                {DETAILS.map((value, index) => (
+                  <div key={index} className="flex items-center gap-3 mb-4">
                     <span>{value.icon}</span>
                     <p className="text-left md:text-left">
                       <a href={value.link} className="hover:text-gray-300">
@@ -126,18 +108,13 @@ export default function Footer() {
                 <h3 className="mb-3 font-medium text-gray-300 underline underline-offset-4">
                   Quick Links
                 </h3>
-                {QUICKLINKS.map(({ title, link }, index) => (
+                {navItems.map((item, index) => (
                   <li key={index} className="flex items-center gap-3">
-                    <NavLink
-                      to={link}
-                      className={({ isActive }) =>
-                        isActive
-                          ? "py-1.5 font-normal hover:text-gray-300 underline underline-offset-4 transition-all duration-100 ease-linear font-bold"
-                          : "py-1.5 font-normal hover:text-gray-300 hover:underline underline-offset-4"
-                      }
-                    >
-                      {title}
-                    </NavLink>
+                    <NavItem
+                      path={item.path}
+                      page={item.page}
+                      isSection={item.isSection}
+                    />
                   </li>
                 ))}
               </ul>
@@ -146,20 +123,17 @@ export default function Footer() {
                 <h3 className="mb-3 font-medium text-gray-300 underline underline-offset-4">
                   Our Services
                 </h3>
-                {OTHERLINKS.map(({ title, link }, index) => (
-                  <li key={index} className="flex items-center gap-3">
-                    <NavLink
-                      to={link}
-                      className={({ isActive }) =>
-                        isActive
-                          ? "py-1.5 font-normal hover:text-gray-300 underline underline-offset-4 transition-all duration-100 ease-linear font-bold"
-                          : "py-1.5 font-normal hover:text-gray-300 hover:underline underline-offset-4"
-                      }
-                    >
-                      {title}
-                    </NavLink>
-                  </li>
-                ))}
+                {navItems
+                  .find((item) => item.page === "Service")
+                  ?.services?.map((service, index) => (
+                    <li key={index} className="flex items-center gap-3">
+                      <NavItem
+                        path={service.path}
+                        page={service.page}
+                        isSection={service.isSection}
+                      />
+                    </li>
+                  ))}
               </ul>
 
               <ul>
@@ -167,37 +141,19 @@ export default function Footer() {
                   Connect
                 </h3>
                 <div className="flex gap-4 sm:justify-center mb-5">
-                  <a
-                    href="#"
-                    className="text-white hover:text-gray-300 text-xl"
-                  >
-                    <FacebookIcon />
-                  </a>
-                  <a
-                    href="#"
-                    className="text-white hover:text-gray-300 text-xl"
-                  >
-                    <InstagramIcon />
-                  </a>
-                  <a
-                    href="#"
-                    className="text-white hover:text-gray-300 text-xl"
-                  >
-                    <LinkedInIcon />
-                  </a>
-                  <a
-                    href="#"
-                    className="text-white hover:text-gray-300 text-xl"
-                  >
-                    <XIcon />
-                  </a>
-                  <a
-                    href="#"
-                    className="text-white hover:text-gray-300 text-xl"
-                  >
-                    <WhatsAppIcon />
-                  </a>
+                  {SOCIAL_LINKS.map((item, index) => (
+                    <a
+                      key={index}
+                      href={item.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-white hover:text-gray-300 text-xl"
+                    >
+                      {item.icon}
+                    </a>
+                  ))}
                 </div>
+
                 {OFFICE_HOURS.map(({ day, timing }, index) => (
                   <li key={index} className="flex items-center gap-3">
                     <p className="py-1.5 font-normal">
@@ -209,7 +165,7 @@ export default function Footer() {
             </div>
           </div>
 
-          <div className="mt-12 flex flex-col items-center justify-center border-t border-gray-700 py-4 md:flex-row md:justify-between">
+          <div className="mt-12 flex flex-col items-center justify-center border-t border-gray-700 py-4">
             <p className="mb-4 text-center text-sm font-normal md:mb-0">
               &copy; {currentYear}{" "}
               <a href="/" className="font-medium">
@@ -217,24 +173,6 @@ export default function Footer() {
               </a>
               . All Rights Reserved.
             </p>
-
-            <div className="flex gap-4 sm:justify-center">
-              <a href="#" className="text-white hover:text-gray-300 text-xl">
-                <FacebookIcon />
-              </a>
-              <a href="#" className="text-white hover:text-gray-300 text-xl">
-                <InstagramIcon />
-              </a>
-              <a href="#" className="text-white hover:text-gray-300 text-xl">
-                <LinkedInIcon />
-              </a>
-              <a href="#" className="text-white hover:text-gray-300 text-xl">
-                <XIcon />
-              </a>
-              <a href="#" className="text-white hover:text-gray-300 text-xl">
-                <WhatsAppIcon />
-              </a>
-            </div>
           </div>
         </div>
       </footer>
