@@ -65,12 +65,8 @@ const OTHERLINKS = [
 
 const OFFICE_HOURS = [
   {
-    day: "Monday - Friday",
+    day: "Monday - Saturday",
     timing: "09:00 AM - 06:00 PM",
-  },
-  {
-    day: "Saturday",
-    timing: "Holiday",
   },
   {
     day: "Sunday",
@@ -99,11 +95,14 @@ const DETAILS = [
 const currentYear = new Date().getFullYear();
 
 export default function Footer() {
-  let content = "* Let’s grow your brand like never before With Affixx Media *";
+  let content = "Let’s grow your brand like never before With Affixx Media";
   return (
     <>
-      <Marquee bg="violet_bg" content={content.repeat(5)} />
+      {/* <Marquee bg="violet_bg" content={content.repeat(5)} /> */}
       <footer className="w-full bg-black text-white">
+        <div className="text-3xl font-bold text-center px-5 py-2 violet_bg">
+          {content}
+        </div>
         <div className="mx-auto w-full max-w-7xl px-8 py-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="flex flex-col items-center md:items-start gap-5">
@@ -112,7 +111,7 @@ export default function Footer() {
                 {DETAILS.map((value) => (
                   <div className="flex items-center gap-3 mb-4">
                     <span>{value.icon}</span>
-                    <p className="text-center md:text-left">
+                    <p className="text-left md:text-left">
                       <a href={value.link} className="hover:text-gray-300">
                         {value.title}
                       </a>
@@ -165,8 +164,40 @@ export default function Footer() {
 
               <ul>
                 <h3 className="mb-3 font-medium text-gray-300 underline underline-offset-4">
-                  Office Hours
+                  Connect
                 </h3>
+                <div className="flex gap-4 sm:justify-center mb-5">
+                  <a
+                    href="#"
+                    className="text-white hover:text-gray-300 text-xl"
+                  >
+                    <FacebookIcon />
+                  </a>
+                  <a
+                    href="#"
+                    className="text-white hover:text-gray-300 text-xl"
+                  >
+                    <InstagramIcon />
+                  </a>
+                  <a
+                    href="#"
+                    className="text-white hover:text-gray-300 text-xl"
+                  >
+                    <LinkedInIcon />
+                  </a>
+                  <a
+                    href="#"
+                    className="text-white hover:text-gray-300 text-xl"
+                  >
+                    <XIcon />
+                  </a>
+                  <a
+                    href="#"
+                    className="text-white hover:text-gray-300 text-xl"
+                  >
+                    <WhatsAppIcon />
+                  </a>
+                </div>
                 {OFFICE_HOURS.map(({ day, timing }, index) => (
                   <li key={index} className="flex items-center gap-3">
                     <p className="py-1.5 font-normal">
