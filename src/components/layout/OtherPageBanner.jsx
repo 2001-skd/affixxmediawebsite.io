@@ -18,7 +18,7 @@ const OtherPageBanner = ({ title }) => {
     },
   };
   return (
-    <section className="flex items-center justify-center h-[300px] bg-red-500 px-4 sm:px-6 md:px-10 lg:px-20 flex-col gap-6 w-full">
+    <section className="flex items-center justify-center h-[300px] px-4 sm:px-6 md:px-10 lg:px-20 flex-col gap-6 w-full">
       <motion.div
         variants={containerVariants}
         initial="hidden"
