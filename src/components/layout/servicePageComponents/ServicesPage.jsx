@@ -10,7 +10,7 @@ const ServicesPage = () => {
         <>
           <SectionHeading
             heading={service.title}
-            subHeading="Our Services"
+            // subHeading="Our Services"
             id={service.id}
           />
           <ServiceCardGroup

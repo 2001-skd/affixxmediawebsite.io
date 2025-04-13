@@ -6,6 +6,7 @@ import App from "./App.jsx";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Index from "./views/Index.jsx";
 import Services from "./views/Services.jsx";
+import PageLoader from "./components/ui/PageLoader.jsx";
 
 const router = createBrowserRouter([
   {
@@ -26,6 +27,7 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
+    <PageLoader />
     <RouterProvider router={router} />
   </StrictMode>
 );

@@ -1,12 +1,22 @@
-import React from "react";
-import OtherPageBanner from "../components/layout/OtherPageBanner";
-import ServicesPage from "../components/layout/servicePageComponents/ServicesPage";
+import React, { Suspense } from "react";
+
+const OtherPageBanner = React.lazy(() =>
+  import("../components/layout/OtherPageBanner")
+);
+const ServicesPage = React.lazy(() =>
+  import("../components/layout/servicePageComponents/ServicesPage")
+);
 
 const Services = () => {
   return (
     <>
-      <OtherPageBanner title="Our Services" />
-      <ServicesPage />
+      <Suspense fallback={<p>Loading...</p>}>
+        <OtherPageBanner title="Our Services" />
+      </Suspense>
+
+      <Suspense fallback={<p>Loading...</p>}>
+        <ServicesPage />
+      </Suspense>
     </>
   );
 };
