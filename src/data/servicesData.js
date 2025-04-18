@@ -1,10 +1,16 @@
-import { details } from "framer-motion/client";
-import image from "../assets/gamright.webp";
+import image1 from "../assets/images/service_01.png";
+import image2 from "../assets/images/service_02.png";
+import image3 from "../assets/images/service_03.png";
+import image4 from "../assets/images/service_04.png";
+import image5 from "../assets/images/service_05.png";
+import image6 from "../assets/images/service_06.png";
+import image7 from "../assets/images/service_07.png";
+import image8 from "../assets/images/service_08.png";
 export const serviceData = [
   {
     id: "social_media_marketing",
     title: "Social Media Marketing",
-    img: image,
+    img: image1,
     details: [
       {
         description:
@@ -20,7 +26,7 @@ export const serviceData = [
   {
     id: "performance_marketing",
     title: "Performance Marketing",
-    img: image,
+    img: image2,
     details: [
       {
         description:
@@ -35,7 +41,7 @@ export const serviceData = [
   {
     id: "influencer_marketing",
     title: "Influencer Marketing",
-    img: image,
+    img: image3,
     details: [
       {
         description:
@@ -50,7 +56,7 @@ export const serviceData = [
   {
     id: "seo",
     title: "Search Engine Optimization (SEO)",
-    img: image,
+    img: image4,
     details: [
       {
         description:
@@ -65,7 +71,7 @@ export const serviceData = [
   {
     id: "guerilla_marketing",
     title: "Guerrilla Marketing",
-    img: image,
+    img: image5,
     details: [
       {
         description:
@@ -81,7 +87,7 @@ export const serviceData = [
   {
     id: "web_developement",
     title: "Website Development",
-    img: image,
+    img: image6,
     details: [
       {
         description:
@@ -96,7 +102,7 @@ export const serviceData = [
   {
     id: "mobile_app_developement",
     title: "Mobile App Development",
-    img: image,
+    img: image7,
     details: [
       {
         description:
@@ -111,7 +117,7 @@ export const serviceData = [
   {
     id: "film_prommotions",
     title: "Film Promotions",
-    img: image,
+    img: image8,
     details: [
       {
         description:

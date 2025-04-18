@@ -1,7 +1,3 @@
-import React from "react";
-import CTAButton from "./CTAButton";
-import AddCallIcon from "@mui/icons-material/AddCall";
-
 const Card = ({
   imageSrc,
   title = false,
@@ -13,7 +9,7 @@ const Card = ({
     <div
       className={`bg-[#101014] flex flex-col ${
         reverse ? "md:flex-row-reverse" : "md:flex-row"
-      } items-center justify-between gap-8 p-5 rounded-md`}
+      } items-center justify-between gap-8 p-5 rounded-md w-full`}
     >
       {/* Image Part */}
       <div className="bg-[#020203] w-full md:w-1/2 h-64 sm:h-80 md:h-96 p-2 rounded-md">
@@ -32,14 +28,6 @@ const Card = ({
         <p className="font-medium text-white mb-5 text-base sm:text-lg md:text-xl leading-relaxed">
           {content}
         </p>
-        {button && (
-          <CTAButton
-            label="Book a Free Call"
-            color="black"
-            bgColor="white"
-            icon={<AddCallIcon />}
-          />
-        )}
       </div>
     </div>
   );

@@ -7,6 +7,8 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Index from "./views/Index.jsx";
 import Services from "./views/Services.jsx";
 import PageLoader from "./components/ui/PageLoader.jsx";
+import TermsandConditions from "./views/TermsandConditions.jsx";
+import PrivacyPolicy from "./views/PrivacyPolicy.jsx";
 
 const router = createBrowserRouter([
   {
@@ -20,6 +22,14 @@ const router = createBrowserRouter([
       {
         path: "/services",
         element: <Services />,
+      },
+      {
+        path: "/terms&conditions",
+        element: <TermsandConditions />,
+      },
+      {
+        path: "/privacy_policy",
+        element: <PrivacyPolicy />,
       },
     ],
   },

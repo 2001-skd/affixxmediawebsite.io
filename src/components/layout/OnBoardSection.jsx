@@ -1,13 +1,11 @@
 import React from "react";
 import SectionHeading from "../ui/SectionHeading";
-// import aboutImg from "../../assets/gamright.webp";
-// import Card from "../ui/Card";
 import { motion } from "framer-motion";
-import StepCard from "../ui/StepCard";
+import Card from "../ui/Card";
 import { onBoardsteps } from "../../data/onBoardSteps";
 
 const fadeUpVariant = {
-  hidden: { opacity: 0, y: 40 },
+  hidden: { opacity: 1, y: 40 },
   show: {
     opacity: 1,
     y: 0,
@@ -16,10 +14,8 @@ const fadeUpVariant = {
 };
 
 const OnBoardSection = () => {
-  const isOdd = onBoardsteps.length % 2 !== 0;
-
   return (
-    <section className="px-4 sm:px-6 md:px-10 lg:px-20 flex-col gap-6 w-full mb-10">
+    <section className="px-4 sm:px-6 md:px-10 lg:px-20 flex-col gap-6 w-full mb-20">
       <motion.div
         variants={fadeUpVariant}
         initial="hidden"
@@ -46,18 +42,15 @@ const OnBoardSection = () => {
         initial="hidden"
         whileInView="show"
         viewport={{ once: true, amount: 0.3 }}
-        className="flex flex-wrap gap-4 justify-center"
+        className="flex flex-wrap gap-4 justify-center w-[100%]"
       >
         {onBoardsteps.map((step, index) => (
-          <StepCard
+          <Card
             key={index}
-            id={step.id}
+            imageSrc={step.image}
             title={step.title}
-            description={step.description}
-            index={index}
-            isLastOdd={isOdd}
-            imgSrc={step.image}
-            onBoard={true}
+            content={step.description}
+            reverse={step.reverse}
           />
         ))}
       </motion.div>

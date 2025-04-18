@@ -10,7 +10,7 @@ import { useState, useEffect } from "react";
 import MobileMenu from "./MobileMenu";
 import CTAButton from "../ui/CTAButton";
 import AddCallIcon from "@mui/icons-material/AddCall";
-import { navItems } from "../../data/navItems";
+import { headerNavItems } from "../../data/headerNavItems";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -41,11 +41,8 @@ const Header = () => {
 
           <nav className="hidden md:block">
             <ul className="flex items-center gap-5 text-black md:flex-row flex-col">
-              {navItems.map((item, index) => (
-                <li
-                  key={index}
-                  className={item.submenu ? "relative group" : ""}
-                >
+              {headerNavItems.map((item, index) => (
+                <li key={index}>
                   <NavLink to={item.path}>{item.page}</NavLink>
                 </li>
               ))}
@@ -53,7 +50,7 @@ const Header = () => {
           </nav>
 
           <div className="hidden md:block">
-            <CTAButton label="Book a Call" icon={<AddCallIcon />} />
+            <CTAButton />
           </div>
 
           <button className="md:hidden block" onClick={handleToggleMenu}>
@@ -68,7 +65,7 @@ const Header = () => {
         </div>
 
         <MobileMenu
-          navItems={navItems}
+          navItems={headerNavItems}
           socialMediaLinks={socialMediaLinks}
           isMenuOpen={isMenuOpen}
           activeSection={activeSection}

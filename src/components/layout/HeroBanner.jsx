@@ -70,11 +70,7 @@ const HeroBanner = () => {
 
         {/* Animated Button */}
         <motion.div variants={fadeUpVariant}>
-          <CTAButton
-            link="/contact"
-            icon={<AddCallIcon />}
-            label="Book a Free Strategy Call"
-          />
+          <CTAButton timing={true} />
         </motion.div>
       </motion.div>
     </section>
