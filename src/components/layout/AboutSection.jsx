@@ -1,5 +1,4 @@
 import SectionHeading from "../ui/SectionHeading";
-import aboutImg from "../../assets/gamright.webp";
 import Card from "../ui/Card";
 import image from "../../assets/images/who_we_are.png";
 
