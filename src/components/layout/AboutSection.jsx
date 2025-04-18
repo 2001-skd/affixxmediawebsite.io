@@ -1,6 +1,6 @@
 import SectionHeading from "../ui/SectionHeading";
 import Card from "../ui/Card";
-import image from "../../assets/images/who_we_are.png";
+import image from "../../assets/images/about.png";
 
 const AboutSection = () => {
   const content = (
