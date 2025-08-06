@@ -1,6 +1,10 @@
 # Affixx Media
 
-**Affixx Media** is a digital marketing agency website that I created for my friend's company. Although the project did not eventually take off, it was a great opportunity to experiment with and learn key frontend technologies.
+**Affixx Media** is a modern, visually appealing digital marketing agency website built with React, Tailwind CSS, and Framer Motion. It is a fully responsive, static site that showcases smooth animations and a clean layout, created as a personal project to sharpen my frontend development skills.
+
+## 🔗 Live Demo
+
+👉 [Visit Live Site](https://affixx-media.web.app/)
 
 ## 🚀 Tech Stack
 

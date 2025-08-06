@@ -72,11 +72,11 @@ export const quickLinks = [
 
 // social media Links starts
 export const socialLinks = [
-  { icon: FacebookIcon, url: "https://facebook.com/yourpage" },
-  { icon: InstagramIcon, url: "https://instagram.com/yourpage" },
-  { icon: LinkedInIcon, url: "https://linkedin.com/company/yourpage" },
-  { icon: XIcon, url: "https://x.com/yourpage" },
-  { icon: WhatsAppIcon, url: "https://wa.me/1234567890" },
+  { icon: FacebookIcon, url: "#" },
+  { icon: InstagramIcon, url: "#" },
+  { icon: LinkedInIcon, url: "#" },
+  { icon: XIcon, url: "#" },
+  { icon: WhatsAppIcon, url: "#" },
 ];
 // social media Links ends
 
